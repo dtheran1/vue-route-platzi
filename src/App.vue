@@ -4,8 +4,9 @@
 
 <template>
   <div>
-    <router-link to="/"> Home </router-link>
-    <router-link to="/about"> About </router-link>
+    <router-link :to="{ name: 'Home' }"> Home </router-link>
+    <router-link :to="{ name: 'Session' }"> Session </router-link>
+    <router-link :to="{ name: 'About' }"> About </router-link>
     <router-link to="/chats"> Chats </router-link>
   </div>
   <RouterView />
