@@ -61,14 +61,14 @@ const router = createRouter({
   ]
 });
 
-router.beforeEach((to, from) => {
-  if (to.meta?.requireAuth && to.meta?.roles.includes('admin')) {
-    console.log('Requerido', to.path);
-    return { name: 'Session' }
-  }
+// router.beforeEach((to, from) => {
+//   if (to.meta?.requireAuth && to.meta?.roles.includes('admin')) {
+//     console.log('Requerido', to.path);
+//     return { name: 'Session' }
+//   }
 
-  // if (to.path === '/') return { name: 'About' }
-  return true
-})
+//   // if (to.path === '/') return { name: 'About' }
+//   return true
+// })
 
 export default router;

@@ -1,5 +1,5 @@
 <script setup>
-  import { computed, ref, defineProps } from 'vue';
+  import { computed, ref, defineProps, watchEffect } from 'vue';
   import { useRoute } from 'vue-router';
   const props = defineProps({
     chatId: {
@@ -32,6 +32,10 @@
     return messages.value.filter((msg) => msg.author === parseInt(props.chatId));
   });
   console.log(msgFiltered.value);
+
+  watchEffect(()=> {
+    console.log(props.chatId);
+  })
 </script>
 
 <template>
