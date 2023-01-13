@@ -1,1 +1,3 @@
-<template>Login</template>
+<template>
+  Aqui puedes hacer tu Logiin
+</template>

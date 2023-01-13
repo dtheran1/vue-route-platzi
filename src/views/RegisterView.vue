@@ -1,1 +1,3 @@
-<template>Register</template>
+<template>
+ |||||| Registrateee!
+</template>
