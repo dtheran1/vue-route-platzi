@@ -10,6 +10,16 @@ const router = createRouter({
     //   redirect: '/',
     // },
     {
+      path: '/404',
+      name: '404',
+      component: () => import('../views/404View.vue')
+    },
+    {
+      path: '/:cathAll(.*)',
+      redirect: '/404',
+      component: () => import('../views/404View.vue')
+    },
+    {
       path: '/',
       alias: '/home',
       name: 'Home',
@@ -47,7 +57,7 @@ const router = createRouter({
       },
       children: [
         {
-          path: ':chatId',
+          path: ':chatId(\\d+)',
           name: 'ChatId',
           component: () => import('../views/ChatView.vue'),
           props: (route) => {
