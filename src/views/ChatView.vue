@@ -7,7 +7,6 @@
       default: '',
     },
   });
-  console.log(props.chatId);
   const route = useRoute();
 
   const messages = ref([
@@ -31,10 +30,9 @@
   const msgFiltered = computed(() => {
     return messages.value.filter((msg) => msg.author === parseInt(props.chatId));
   });
-  console.log(msgFiltered.value);
 
   watchEffect(()=> {
-    console.log(props.chatId);
+    console.log(route.params);
   })
 </script>
 
