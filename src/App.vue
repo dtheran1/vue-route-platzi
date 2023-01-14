@@ -1,5 +1,6 @@
 <script setup>
   // import { RouterLink, RouterView } from 'vue-router'
+  const isTest = import.meta.env.VITE_STAGE === 'test'
 </script>
 
 <template>
@@ -7,6 +8,7 @@
     <router-link :to="{ name: 'Home' }"> Home </router-link>
     <router-link :to="{ name: 'Session' }"> Session </router-link>
     <router-link :to="{ name: 'About' }"> About </router-link>
+    <router-link v-if="isTest" :to="{ name: 'Profile' }"> Profile </router-link>
     <router-link to="/chats"> Chats </router-link>
   </div>
   <RouterView />
