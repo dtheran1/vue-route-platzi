@@ -1,6 +1,8 @@
 
 import { createRouter, createWebHashHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import HomeView from '../views/HomeView.vue';
+
+const stage = import.meta.env.VITE_STAGE
 
 const router = createRouter({
   history: createWebHashHistory(),
@@ -70,6 +72,14 @@ const router = createRouter({
     },
   ]
 });
+
+if (stage === 'test') {
+  router.addRoute({
+    path: '/profile',
+    component: () => import('../views/ProfileView.vue'),
+    name: 'Profile'
+  })
+}
 
 // router.beforeEach((to, from) => {
 //   if (to.meta?.requireAuth && to.meta?.roles.includes('admin')) {
